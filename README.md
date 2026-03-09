@@ -48,6 +48,10 @@ An arrow function is a shorter and modern way to write functions.
 -makes code cleaner and easier to read
 -commonly used with array methods
 
+5.What are template literals?
+=>
+Template literals are  a way to create strings with embedded expressions .It allows multi-line string and string interpolation using ${} .
+
 
 
 
