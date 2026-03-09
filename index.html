@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <!-- Daisi -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .font-geist{
+             font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+<body class="font-geist bg-[#F8FAFC] pt-10 pb-20">
+    <header class="w-9/12 md:w-6/12  lg:w-4/10 mx-auto bg-white p-10 rounded-xl shadow-lg">
+        <section class="">
+            <img src="./assets/github-logo.png" alt="" class="mx-auto">
+            <h1 class="font-bold text-4xl text-center mt-8">GitHub Issues Tracker</h1>
+            <p class="text-center mt-2 text-gray-600">Sign in to manage your issues</p>
+        </section>
+        <section class="mt-10  pb-8">
+            <fieldset class="fieldset">
+          <label class="label font-semibold text-base text-black"> Username</label>
+          <input id="user-name" type="text" class="input w-full" placeholder="Enter Username"  />
+          <label class="label font-semibold text-base text-black"> Password</label>
+          <input id="password" type="password" class="input w-full" placeholder="Enter Password" autocomplete="new-password"/>
+          <div><a class="link link-hover">Forgot password?</a></div>
+          <button id="login-btn" class="btn btn-primary mt-4">Login</button>
+        </fieldset>
+        </section>
+        <section>
+        <div class="flex items-center my-4">
+        <div class="flex-grow border-t border-gray-400"></div>
+  
+       <span class="flex-shrink mx-4 text-gray-500 font-medium">OR</span>
+  
+     <div class="flex-grow border-t border-gray-400"></div>
+     </div>
+     <p class="text-center text-gray-600 my-5">Demo Credentials:</p>
+     <div class="bg-[]">
+
+     </div>
+        </section>
+    </header>
+    <main>
+
+
+
+    <script src="./index.js"></script>  
+    </main>
+</body>
+</html>
