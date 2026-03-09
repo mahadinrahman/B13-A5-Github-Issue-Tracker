@@ -44,7 +44,7 @@ const loadAllbtn=(btns)=>{
     btns.forEach(btn => {
         const div=document.createElement('div');
         div.innerHTML=`
-          <div  class="card bg-white shadow-md h-full  ${btn.status=='open'?`border-t-green-500 border-t-3`:`border-t-purple-500 border-t-3`}">
+          <div onClick="loadDetails(${btn.id})"  class="card bg-white shadow-md h-full  ${btn.status=='open'?`border-t-green-500 border-t-3`:`border-t-purple-500 border-t-3`}">
             <div class=" px-5 pt-5 pb-2">
             <div class="flex justify-between ">
                 <p>${btn.status=='open' ? `<img src="./assets/Open-Status.png" alt=""></img>`:`<img src="./assets/Closed- Status .png" alt=""></img>`}</p>
@@ -112,5 +112,37 @@ document.getElementById('btn-search').addEventListener('click',function(){
     })
     
 })
+
+const loadDetails=(id)=>{
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data.data);
+        displayModal(data.data);
+
+    })
+}
+
+const displayModal=(details)=>{
+    const detailContainer=document.getElementById('detail-container');
+    detailContainer.innerHTML=`
+        <div>
+          <p class="text-xl font-bold mb-1">${details.title}</p>
+          <div class="flex gap-2 mb-2">
+          <p class="rounded-full px-2 text-white bg-green-600">${details.status}</p>
+          <p class="text-gray-600">. opened by ${details.author}</p>
+          <p class="text-gray-600">. ${details.updatedAt.split("T")[0]}</p>
+          </div>
+          <p class="mb-2">${createElements(details.labels)}</p>
+          <p class="text-gray-600 mb-3">${details.description}</p>
+          <div class="flex gap-30 bg-[#E4E4E7] p-8 mb-2 rounded-lg">
+          <p>Assignee:<br><span class="font-semibold">${details.author}</span></p>
+          <p>Priority:<br><span class="rounded-full text-white bg-red-600 px-2">${details.priority}</span></p>
+
+          </div>
+        </div>
+    `;
+    document.getElementById('my_modal').showModal();
+}
 
 
