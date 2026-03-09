@@ -42,7 +42,11 @@ forEach() loops through an array but does not return anything.
 
 4. What is an arrow function?
 =>
-
+An arrow function is a shorter and modern way to write functions.
+-It is uses arrow simble.
+-It is a short symble of writing functions
+-makes code cleaner and easier to read
+-commonly used with array methods
 
 
 
